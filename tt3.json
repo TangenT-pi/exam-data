@@ -1,0 +1,39 @@
+{
+    "title": "MSc Mathematics Sem-IV Exams",
+    "academicYear": "2023-2025",
+    "exams": [
+        {
+            "id": "comp1",
+            "subject": "Advanced Calculus",
+            "type": "compulsory",
+            "date": "2024-05-10T09:00"
+        },
+      {
+            "id": "comp2",
+            "subject": "VFD",
+            "type": "compulsory",
+            "date": "2024-05-12T09:00"
+        },
+        {
+            "id": "opt1",
+            "subject": "Number Theory",
+            "type": "optional",
+            "category": "Pure Mathematics",
+            "date": "2024-05-12T09:00"
+        },
+      {
+            "id": "opt3",
+            "subject": "Number",
+            "type": "optional",
+            "category": "Pure Mathematics",
+            "date": "2024-05-13T09:00"
+        },
+        {
+            "id": "opt2",
+            "subject": "Mathematical Physics",
+            "type": "optional",
+            "category": "Applied Mathematics",
+            "date": "2024-05-14T09:00"
+        }
+    ]
+}
