@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Important Announcement About Final Exams",
+    "link": "https://example.com/exam-info",
+    "date": "2023-11-15",
+    "time": "10:30 AM",
+    "tag": "New"
+  },
+  {
+    "title": "Mathematics Seminar Schedule Update",
+    "link": "https://example.com/seminar-schedule",
+    "date": "2023-11-14",
+    "time": "02:15 PM",
+    "tag": "Events"
+  },
+  {
+    "title": "Fee Submission Deadline Extended",
+    "link": "https://example.com/fee-details",
+    "date": "2023-11-12",
+    "time": "09:00 AM",
+    "tag": "Finance"
+  },
+  {
+    "title": "Technical Issues with Online Portal",
+    "link": "",
+    "date": "2023-11-10",
+    "time": "04:45 PM",
+    "tag": "Technical"
+  }
+]
