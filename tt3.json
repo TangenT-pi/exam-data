@@ -1,6 +1,8 @@
 {
-    "title": "MSc Mathematics Sem-IV Exams",
+    "title": "MSc Mathematics Examinations",
     "academicYear": "2023-2025",
+    "durationHours": 3,
+    "defaultOptionals": ["opt1", "opt2", "opt3"],
     "exams": [
         {
             "id": "comp1",
@@ -8,9 +10,9 @@
             "type": "compulsory",
             "date": "2024-05-10T09:00"
         },
-      {
+        {
             "id": "comp2",
-            "subject": "VFD",
+            "subject": "Algebraic Structures",
             "type": "compulsory",
             "date": "2024-05-12T09:00"
         },
@@ -18,22 +20,19 @@
             "id": "opt1",
             "subject": "Number Theory",
             "type": "optional",
-            "category": "Pure Mathematics",
-            "date": "2024-05-12T09:00"
-        },
-      {
-            "id": "opt3",
-            "subject": "Number",
-            "type": "optional",
-            "category": "Pure Mathematics",
-            "date": "2024-05-13T09:00"
+            "date": "2024-05-15T09:00"
         },
         {
             "id": "opt2",
             "subject": "Mathematical Physics",
             "type": "optional",
-            "category": "Applied Mathematics",
-            "date": "2024-05-14T09:00"
+            "date": "2024-05-17T09:00"
+        },
+        {
+            "id": "opt3",
+            "subject": "Topology",
+            "type": "optional",
+            "date": "2024-05-19T09:00"
         }
     ]
 }
