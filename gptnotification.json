@@ -1,0 +1,23 @@
+[
+  {
+    "title": "New Course Materials Released",
+    "link": "https://example.com/courses/new-materials",
+    "date": "2025-03-24",
+    "time": "10:00 AM",
+    "tag": "New"
+  },
+  {
+    "title": "Upcoming Technical Workshop",
+    "link": "https://example.com/events/workshop",
+    "date": "2025-03-25",
+    "time": "2:00 PM",
+    "tag": "Technical"
+  },
+  {
+    "title": "Finance Seminar Announcement",
+    "link": "",
+    "date": "2025-03-23",
+    "time": "9:30 AM",
+    "tag": "Finance"
+  }
+]
