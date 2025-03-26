@@ -18,37 +18,37 @@
         {
             "subject": "Advanced Functional Analysis",
             "code": "MATH501",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2024-05-21T09:00:00"
         },
         {
             "subject": "Algebraic Topology",
             "code": "MATH502",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2025-05-24T09:00:00"
         },
         {
             "subject": "Computational Mathematics",
             "code": "MATH503",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2025-05-27T09:00:00"
         },
         {
             "subject": "IT&IE",
             "code": "MATH803",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2025-05-27T09:00:00"
         },
         {
             "subject": "MP",
             "code": "MATH903",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2025-05-28T09:00:00"
         },
         {
             "subject": "Mathematical Physics",
             "code": "MATH504",
-            "type": "optional",
+            "type": "compulsory",
             "date": "2025-05-30T09:00:00"
         }
     ]
