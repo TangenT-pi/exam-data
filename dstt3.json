@@ -43,19 +43,19 @@
             "subject": "Algebraic Topology",
             "code": "MATH502",
             "type": "optional",
-            "date": "2024-05-24T09:00:00"
+            "date": "2025-05-24T09:00:00"
         },
         {
             "subject": "Computational Mathematics",
             "code": "MATH503",
             "type": "optional",
-            "date": "2024-05-27T09:00:00"
+            "date": "2025-05-27T09:00:00"
         },
         {
             "subject": "Mathematical Physics",
             "code": "MATH504",
             "type": "optional",
-            "date": "2024-05-30T09:00:00"
+            "date": "2025-05-30T09:00:00"
         }
     ]
 }
