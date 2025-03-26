@@ -1,38 +1,37 @@
 {
-    "title": "MSc Mathematics Examinations",
-    "academicYear": "2023-2025",
-    "durationHours": 3,
-    "defaultOptionals": ["opt1", "opt2", "opt3"],
-    "exams": [
-        {
-            "id": "comp1",
-            "subject": "Advanced Calculus",
-            "type": "compulsory",
-            "date": "2024-05-10T09:00"
-        },
-        {
-            "id": "comp2",
-            "subject": "Algebraic Structures",
-            "type": "compulsory",
-            "date": "2024-05-12T09:00"
-        },
-        {
-            "id": "opt1",
-            "subject": "Number Theory",
-            "type": "optional",
-            "date": "2024-05-15T09:00"
-        },
-        {
-            "id": "opt2",
-            "subject": "Mathematical Physics",
-            "type": "optional",
-            "date": "2024-05-17T09:00"
-        },
-        {
-            "id": "opt3",
-            "subject": "Topology",
-            "type": "optional",
-            "date": "2024-05-19T09:00"
-        }
-    ]
+  "title": "MSc Mathematics Final Exams",
+  "academicYear": "2024-2025",
+  "durationHours": 3,
+  "exams": [
+    {
+      "subject": "Advanced Algebra",
+      "short": "AdvAlg",
+      "date": "2025-04-10T09:00:00",
+      "type": "compulsory"
+    },
+    {
+      "subject": "Real Analysis",
+      "short": "RealAn",
+      "date": "2025-04-12T09:00:00",
+      "type": "compulsory"
+    },
+    {
+      "subject": "Topology",
+      "short": "Topol",
+      "date": "2025-04-15T09:00:00",
+      "type": "optional"
+    },
+    {
+      "subject": "Probability Theory",
+      "short": "ProbTh",
+      "date": "2025-04-18T09:00:00",
+      "type": "optional"
+    },
+    {
+      "subject": "Numerical Methods",
+      "short": "NumMet",
+      "date": "2025-04-20T09:00:00",
+      "type": "optional"
+    }
+  ]
 }
