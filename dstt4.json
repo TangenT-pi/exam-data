@@ -24,31 +24,31 @@
         {
             "subject": "Algebraic Topology",
             "code": "MATH502",
-            "type": "compulsory",
+            "type": "optional",
             "date": "2025-05-24T09:00:00"
         },
         {
             "subject": "Computational Mathematics",
             "code": "MATH503",
-            "type": "compulsory",
+            "type": "optional",
             "date": "2025-05-27T09:00:00"
         },
         {
             "subject": "IT&IE",
             "code": "MATH803",
-            "type": "compulsory",
+            "type": "optional",
             "date": "2025-05-27T09:00:00"
         },
         {
             "subject": "MP",
             "code": "MATH903",
-            "type": "compulsory",
+            "type": "optional",
             "date": "2025-05-28T09:00:00"
         },
         {
             "subject": "Mathematical Physics",
             "code": "MATH504",
-            "type": "compulsory",
+            "type": "optional",
             "date": "2025-05-30T09:00:00"
         }
     ]
