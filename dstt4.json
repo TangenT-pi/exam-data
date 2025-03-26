@@ -1,11 +1,11 @@
 {
     "title": "MSc Mathematics Final Examinations",
-    "academicYear": "2023-2024",
+    "academicYear": "2024-2025",
     "durationHours": 3,
     "exams": [
         {
-            "subject": "Real Analysis",
-            "code": "MATH401",
+            "subject": "AAC",
+            "code": "MATH701",
             "type": "compulsory",
             "date": "2024-05-15T09:00:00"
         },
@@ -32,6 +32,18 @@
             "code": "MATH503",
             "type": "optional",
             "date": "2025-05-27T09:00:00"
+        },
+        {
+            "subject": "IT&IE",
+            "code": "MATH803",
+            "type": "optional",
+            "date": "2025-05-27T09:00:00"
+        },
+        {
+            "subject": "MP",
+            "code": "MATH903",
+            "type": "optional",
+            "date": "2025-05-28T09:00:00"
         },
         {
             "subject": "Mathematical Physics",
