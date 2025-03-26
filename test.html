@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RU MSc Math GPA Calculator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .calculator-card {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      color: #2c3e50;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .header h2 {
+      font-size: 16px;
+      color: #3498db;
+      font-weight: 400;
+    }
+
+    .header::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #3498db;
+      margin: 10px auto;
+      border-radius: 3px;
+    }
+
+    .type-selection {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .type-option {
+      position: relative;
+    }
+
+    .type-option input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .type-option label {
+      display: block;
+      padding: 10px 15px;
+      background: #ecf0f1;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c3e50;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .type-option input:checked + label {
+      background: #3498db;
+      color: white;
+      box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      position: relative;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+      background: white;
+      color: #333;
+    }
+
+    .input-group input:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .input-group input.error {
+      border-color: #e74c3c;
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+    }
+
+    .semester-inputs {
+      margin-bottom: 20px;
+    }
+
+    .semester-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .add-semester {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+
+    .add-semester:hover {
+      background: #2980b9;
+    }
+
+    .result-container {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      transition: all 0.5s ease;
+      animation: fadeIn 0.5s ease-out;
+      text-align: center;
+      background: rgba(52, 152, 219, 0.1);
+      border-left: 4px solid #3498db;
+    }
+
+    .gpa {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 10px 0;
+      color: #2c3e50;
+    }
+
+    .feedback {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .loading {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 480px) {
+      .calculator-card {
+        padding: 20px;
+      }
+      
+      .header h1 {
+        font-size: 20px;
+      }
+      
+      .header h2 {
+        font-size: 14px;
+      }
+      
+      .type-selection {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .type-option label {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .input-group input {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+      
+      .gpa {
+        font-size: 24px;
+      }
+      
+      .feedback {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-card">
+    <div class="header">
+      <h1>MSc Mathematics GPA Calculator</h1>
+      <h2>Rajasthan University</h2>
+    </div>
+
+    <!-- Type Selection -->
+    <div class="type-selection">
+      <div class="type-option">
+        <input type="radio" name="type" value="sgpa" id="sgpaOption" checked>
+        <label for="sgpaOption">SGPA Calculator</label>
+      </div>
+      <div class="type-option">
+        <input type="radio" name="type" value="cgpa" id="cgpaOption">
+        <label for="cgpaOption">CGPA Calculator</label>
+      </div>
+    </div>
+
+    <!-- SGPA Calculation -->
+    <div id="sgpaSection">
+      <div class="input-group">
+        <label for="totalCredits">Total Credits for Semester</label>
+        <input type="number" id="totalCredits" placeholder="Enter total credits" step="0.1">
+      </div>
+      <div class="input-group">
+        <label for="earnedCredits">Credits Earned</label>
+        <input type="number" id="earnedCredits" placeholder="Enter credits earned" step="0.1">
+      </div>
+    </div>
+
+    <!-- CGPA Calculation -->
+    <div id="cgpaSection" class="hidden">
+      <div class="semester-inputs" id="semesterContainer">
+        <div class="semester-header">
+          <h3>Semesters</h3>
+          <button class="add-semester" id="addSemester">+ Add Semester</button>
+        </div>
+        <div class="input-group semester-input">
+          <label for="semester1Credits">Semester 1 Credits</label>
+          <input type="number" class="semester-credits" placeholder="Enter semester credits" step="0.1">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-container hidden" id="resultContainer">
+      <div class="gpa" id="gpaResult"></div>
+      <div class="feedback" id="feedbackMessage"></div>
+    </div>
+  </div>
+
+  <script>
+    class GPACalculator {
+      constructor() {
+        this.currentType = 'sgpa';
+        this.semesterCount = 1;
+        
+        this.initElements();
+        this.setupEventListeners();
+      }
+
+      initElements() {
+        this.elements = {
+          typeRadios: document.querySelectorAll('input[name="type"]'),
+          sgpaSection: document.getElementById('sgpaSection'),
+          cgpaSection: document.getElementById('cgpaSection'),
+          totalCredits: document.getElementById('totalCredits'),
+          earnedCredits: document.getElementById('earnedCredits'),
+          semesterContainer: document.getElementById('semesterContainer'),
+          addSemester: document.getElementById('addSemester'),
+          resultContainer: document.getElementById('resultContainer'),
+          gpaResult: document.getElementById('gpaResult'),
+          feedbackMessage: document.getElementById('feedbackMessage')
+        };
+      }
+
+      setupEventListeners() {
+        // Type selection
+        this.elements.typeRadios.forEach(radio => {
+          radio.addEventListener('change', (e) => {
+            this.currentType = e.target.value;
+            this.updateView();
+            this.calculateGPA();
+          });
+        });
+
+        // SGPA inputs
+        this.elements.totalCredits.addEventListener('input', this.debounce(() => this.calculateGPA(), 300));
+        this.elements.earnedCredits.addEventListener('input', this.debounce(() => this.calculateGPA(), 300));
+
+        // Add semester button
+        this.elements.addSemester.addEventListener('click', () => this.addSemester());
+        
+        // Listen for changes in semester inputs
+        document.addEventListener('input', (e) => {
+          if (e.target.classList.contains('semester-credits')) {
+            this.calculateGPA();
+          }
+        });
+      }
+
+      updateView() {
+        if (this.currentType === 'sgpa') {
+          this.elements.sgpaSection.classList.remove('hidden');
+          this.elements.cgpaSection.classList.add('hidden');
+        } else {
+          this.elements.sgpaSection.classList.add('hidden');
+          this.elements.cgpaSection.classList.remove('hidden');
+        }
+      }
+
+      addSemester() {
+        this.semesterCount++;
+        const newSemester = document.createElement('div');
+        newSemester.className = 'input-group semester-input';
+        newSemester.innerHTML = `
+          <label for="semester${this.semesterCount}Credits">Semester ${this.semesterCount} Credits</label>
+          <input type="number" class="semester-credits" placeholder="Enter semester credits" step="0.1">
+        `;
+        this.elements.semesterContainer.appendChild(newSemester);
+      }
+
+      validateInputs() {
+        let isValid = true;
+        
+        if (this.currentType === 'sgpa') {
+          const totalCredits = parseFloat(this.elements.totalCredits.value);
+          const earnedCredits = parseFloat(this.elements.earnedCredits.value);
+          
+          if (isNaN(totalCredits) || totalCredits <= 0) {
+            this.elements.totalCredits.classList.add('error');
+            isValid = false;
+          } else {
+            this.elements.totalCredits.classList.remove('error');
+          }
+          
+          if (isNaN(earnedCredits) || earnedCredits < 0 || earnedCredits > totalCredits) {
+            this.elements.earnedCredits.classList.add('error');
+            isValid = false;
+          } else {
+            this.elements.earnedCredits.classList.remove('error');
+          }
+        } else {
+          const semesterInputs = document.querySelectorAll('.semester-credits');
+          semesterInputs.forEach(input => {
+            const credits = parseFloat(input.value);
+            if (isNaN(credits) || credits < 0) {
+              input.classList.add('error');
+              isValid = false;
+            } else {
+              input.classList.remove('error');
+            }
+          });
+        }
+        
+        return isValid;
+      }
+
+      calculateGPA() {
+        if (!this.validateInputs()) {
+          this.elements.resultContainer.classList.add('hidden');
+          return;
+        }
+
+        this.showLoading();
+        
+        try {
+          let gpa = 0;
+          
+          if (this.currentType === 'sgpa') {
+            const totalCredits = parseFloat(this.elements.totalCredits.value);
+            const earnedCredits = parseFloat(this.elements.earnedCredits.value);
+            
+            if (totalCredits === 0) {
+              throw new Error("Total credits cannot be zero");
+            }
+            
+            gpa = (earnedCredits / totalCredits) * 10;
+          } else {
+            const semesterInputs = document.querySelectorAll('.semester-credits');
+            let totalCredits = 0;
+            let totalEarned = 0;
+            
+            semesterInputs.forEach(input => {
+              const credits = parseFloat(input.value);
+              if (!isNaN(credits) && credits > 0) {
+                totalCredits += 1; // Each semester counts as 1 for CGPA
+                totalEarned += (credits / 10); // Convert credits to GPA scale
+              }
+            });
+            
+            if (totalCredits === 0) {
+              throw new Error("Please enter at least one semester's credits");
+            }
+            
+            gpa = totalEarned / totalCredits;
+          }
+          
+          this.showResult(gpa);
+        } catch (error) {
+          this.showError(error.message);
+        }
+      }
+
+      showLoading() {
+        this.elements.resultContainer.innerHTML = '<div class="loading">Calculating...</div>';
+        this.elements.resultContainer.classList.remove('hidden');
+      }
+
+      showResult(gpa) {
+        const { feedback, color } = this.getPerformanceFeedback(gpa);
+        
+        this.elements.gpaResult.textContent = `${this.formatNumber(gpa)}`;
+        this.elements.feedbackMessage.textContent = feedback;
+        this.elements.resultContainer.style.backgroundColor = `${color}20`;
+        this.elements.resultContainer.style.borderLeft = `4px solid ${color}`;
+        this.elements.resultContainer.innerHTML = `
+          <div class="gpa">${this.formatNumber(gpa)}</div>
+          <div class="feedback">${feedback}</div>
+        `;
+      }
+
+      showError(message) {
+        this.elements.gpaResult.textContent = "Error";
+        this.elements.feedbackMessage.textContent = message;
+        this.elements.resultContainer.style.backgroundColor = "rgba(231, 76, 60, 0.1)";
+        this.elements.resultContainer.style.borderLeft = "4px solid #e74c3c";
+        this.elements.resultContainer.classList.remove('hidden');
+      }
+
+      getPerformanceFeedback(gpa) {
+        let feedback = "";
+        let color = "";
+
+        if (gpa >= 8.5) {
+          feedback = "Outstanding Performance! First Class with Distinction 🎉";
+          color = "#27ae60";
+        } else if (gpa >= 7.0) {
+          feedback = "Excellent! First Class 👍";
+          color = "#2ecc71";
+        } else if (gpa >= 6.0) {
+          feedback = "Good Work! Second Class 💪";
+          color = "#f39c12";
+        } else if (gpa >= 5.0) {
+          feedback = "You've Passed! Keep improving 📈";
+          color = "#e67e22";
+        } else {
+          feedback = "Needs Improvement. Don't give up! 📚";
+          color = "#e74c3c";
+        }
+
+        return { feedback, color };
+      }
+
+      formatNumber(num) {
+        return parseFloat(num).toFixed(2);
+      }
+
+      debounce(func, wait) {
+        let timeout;
+        return function() {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+    }
+
+    // Initialize calculator when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new GPACalculator();
+    });
+  </script>
+</body>
+</html>
