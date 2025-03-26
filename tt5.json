@@ -1,0 +1,110 @@
+{
+    "currentAcademicYear": "2023-24",
+    "academicYears": [
+        {
+            "year": "2023-24",
+            "title": "M.Sc. Mathematics (Final Year)",
+            "durationHours": 3,
+            "exams": [
+                {
+                    "code": "MATH-501",
+                    "subject": "Real Analysis",
+                    "date": "2023-11-15T10:00:00",
+                    "type": "compulsory"
+                },
+                {
+                    "code": "MATH-502",
+                    "subject": "Complex Analysis",
+                    "date": "2023-11-18T10:00:00",
+                    "type": "compulsory"
+                },
+              {
+                    "code": "MATH-504",
+                    "subject": "Complex",
+                    "date": "2023-11-19T10:00:00",
+                    "type": "optional"
+                },
+                {
+                    "code": "MATH-503",
+                    "subject": "Functional Analysis",
+                    "date": "2023-11-21T10:00:00",
+                    "type": "optional"
+                }
+            ]
+        },
+        {
+            "year": "2022-23",
+            "title": "M.Sc. Mathematics (First Year)",
+            "durationHours": 3,
+            "exams": [
+                {
+                    "code": "MATH-401",
+                    "subject": "Algebra",
+                    "date": "2022-11-10T10:00:00",
+                    "type": "compulsory"
+                },
+                {
+                    "code": "MATH-402",
+                    "subject": "Topology",
+                    "date": "2022-11-15T10:00:00",
+                    "type": "compulsory"
+                }
+              {
+                    "code": "MATH-502",
+                    "subject": "Complex Analysis",
+                    "date": "2022-11-18T10:00:00",
+                    "type": "compulsory"
+                },
+              {
+                    "code": "MATH-504",
+                    "subject": "Complex",
+                    "date": "2022-11-19T10:00:00",
+                    "type": "optional"
+                },
+                {
+                    "code": "MATH-503",
+                    "subject": "Functional Analysis",
+                    "date": "2022-11-21T10:00:00",
+                    "type": "optional"
+                }
+            ]
+        },
+      {
+            "year": "2021-22",
+            "title": "M.Sc. Mathematics (First Year)",
+            "durationHours": 3,
+            "exams": [
+                {
+                    "code": "MATH-401",
+                    "subject": "Algebra",
+                    "date": "2021-11-10T10:00:00",
+                    "type": "compulsory"
+                },
+                {
+                    "code": "MATH-402",
+                    "subject": "Topology",
+                    "date": "2021-11-15T10:00:00",
+                    "type": "compulsory"
+                }
+              {
+                    "code": "MATH-502",
+                    "subject": "Complex Analysis",
+                    "date": "2021-11-18T10:00:00",
+                    "type": "compulsory"
+                },
+              {
+                    "code": "MATH-504",
+                    "subject": "Complex",
+                    "date": "2021-11-19T10:00:00",
+                    "type": "optional"
+                },
+                {
+                    "code": "MATH-503",
+                    "subject": "Functional Analysis",
+                    "date": "2021-11-21T10:00:00",
+                    "type": "optional"
+                }
+            ]
+        }
+    ]
+}
