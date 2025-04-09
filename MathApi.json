@@ -1,0 +1,79 @@
+[
+  {
+    "id": "area_circle",
+    "name": "Area of a Circle",
+    "category": "Geometry",
+    "formula": "A = πr²",
+    "variables": {
+      "A": "Area",
+      "r": "Radius"
+    },
+    "description": "Calculates the area of a circle given its radius.",
+    "example": {
+      "input": { "r": 5 },
+      "output": "78.54"
+    }
+  },
+  {
+    "id": "pythagorean_theorem",
+    "name": "Pythagorean Theorem",
+    "category": "Geometry",
+    "formula": "a² + b² = c²",
+    "variables": {
+      "a": "Base",
+      "b": "Height",
+      "c": "Hypotenuse"
+    },
+    "description": "Relates the lengths of the sides of a right-angled triangle.",
+    "example": {
+      "input": { "a": 3, "b": 4 },
+      "output": "c = 5"
+    }
+  },
+  {
+    "id": "quadratic_formula",
+    "name": "Quadratic Formula",
+    "category": "Algebra",
+    "formula": "x = (-b ± √(b² - 4ac)) / (2a)",
+    "variables": {
+      "a": "Coefficient of x²",
+      "b": "Coefficient of x",
+      "c": "Constant"
+    },
+    "description": "Solves quadratic equations of the form ax² + bx + c = 0.",
+    "example": {
+      "input": { "a": 1, "b": -3, "c": 2 },
+      "output": "x = 1, x = 2"
+    }
+  },
+  {
+    "id": "derivative_power_rule",
+    "name": "Power Rule (Derivative)",
+    "category": "Calculus",
+    "formula": "d/dx [x^n] = nx^(n-1)",
+    "variables": {
+      "n": "Power of x",
+      "x": "Variable"
+    },
+    "description": "Differentiates power functions with respect to x.",
+    "example": {
+      "input": { "expression": "x^3" },
+      "output": "3x^2"
+    }
+  },
+  {
+    "id": "integration_rule",
+    "name": "Basic Integration Rule",
+    "category": "Calculus",
+    "formula": "∫x^n dx = (x^(n+1)) / (n+1) + C",
+    "variables": {
+      "n": "Power of x",
+      "C": "Constant of Integration"
+    },
+    "description": "Integrates power functions with respect to x.",
+    "example": {
+      "input": { "expression": "x^2" },
+      "output": "(x^3)/3 + C"
+    }
+  }
+]
